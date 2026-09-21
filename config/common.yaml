@@ -1,0 +1,42 @@
+auto_handeye_calibration:
+  ros__parameters:
+    calibration:
+      mode: eye_in_hand
+    frames:
+      base: base_link
+      flange: tool0
+      camera_optical: camera_color_optical_frame
+    topics:
+      image: /camera/color/image_raw
+      camera_info: /camera/color/camera_info
+      joint_states: /joint_states
+    moveit:
+      planning_group: manipulator
+    target:
+      dictionary: DICT_5X5_250
+      squares_x: 5
+      squares_y: 7
+      square_length_m: 0.038268
+      marker_length_m: 0.023960
+    bootstrap:
+      accepted_sample_target: 8
+    capture:
+      settle_time_s: 0.75
+      minimum_corner_fraction: 0.60
+      initial_minimum_corner_fraction: 1.0
+      minimum_coverage_ratio: 0.08
+      border_margin_px: 20.0
+      maximum_pnp_rms_px: 1.0
+      maximum_sync_error_s: 0.020
+    stopping:
+      minimum_samples: 10
+      maximum_samples: 25
+    safety:
+      automatic_execution_enabled: false
+      operator_arm_required: true
+      planning_time_s: 5.0
+      velocity_scaling: 0.15
+      acceleration_scaling: 0.10
+    session:
+      auto_start: false
+      output_directory: /tmp/active_handeye

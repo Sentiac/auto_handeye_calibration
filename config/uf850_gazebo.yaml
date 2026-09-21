@@ -1,0 +1,32 @@
+auto_handeye_calibration:
+  ros__parameters:
+    calibration.mode: eye_in_hand
+    frames.base: link_base
+    frames.flange: link_eef
+    frames.camera_optical: camera_color_optical_frame
+    topics.image: /camera/color/image_raw
+    topics.camera_info: /camera/color/camera_info
+    topics.joint_states: /joint_states
+    moveit.planning_group: uf850
+    target.dictionary: DICT_5X5_250
+    target.squares_x: 5
+    target.squares_y: 7
+    target.square_length_m: 0.038268
+    target.marker_length_m: 0.023960
+    bootstrap.accepted_sample_target: 8
+    capture.settle_time_s: 0.75
+    capture.minimum_corner_fraction: 0.60
+    capture.initial_minimum_corner_fraction: 1.0
+    capture.minimum_coverage_ratio: 0.08
+    capture.border_margin_px: 20.0
+    capture.maximum_pnp_rms_px: 1.0
+    capture.maximum_sync_error_s: 0.020
+    stopping.minimum_samples: 10
+    stopping.maximum_samples: 25
+    safety.automatic_execution_enabled: true
+    safety.operator_arm_required: false
+    safety.planning_time_s: 5.0
+    safety.velocity_scaling: 0.12
+    safety.acceleration_scaling: 0.08
+    session.auto_start: true
+    session.output_directory: /tmp/active_handeye

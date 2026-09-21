@@ -1,0 +1,18 @@
+auto_handeye_calibration:
+  ros__parameters:
+    calibration.mode: eye_in_hand
+    frames.base: base_0
+    frames.flange: link_6
+    frames.camera_optical: camera_color_optical_frame
+    topics.image: /camera/color/image_raw
+    topics.camera_info: /camera/color/camera_info
+    topics.joint_states: /joint_states
+    moveit.planning_group: arm
+    target.dictionary: DICT_5X5_250
+    target.squares_x: 5
+    target.squares_y: 7
+    target.square_length_m: 0.038268
+    target.marker_length_m: 0.023960
+    safety.automatic_execution_enabled: false
+    safety.operator_arm_required: true
+    session.auto_start: false
